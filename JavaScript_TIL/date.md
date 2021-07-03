@@ -56,11 +56,11 @@ const now = new Date(2021, 6, 28, 1, 16, 11);
 [.toISOString()](#datetoisostring)
 日付を文字列として出力する
 
-new Date.getTime()
+[.new Date.getTime()](#dategettime)
 UNIX[^1] 元期からの経過ミリ秒数を返す
 [^1]:UNIX 時間または UNIX 時刻とはコンピューターシステム上での時刻表現の一種。
 
-Date.now()
+[Date.now()](#datenow)
 UTC (協定世界時) での 1970 年 1 月 1 日 0 時 0 分 0 秒 から現在までの経過時間をミリ秒単位で返します
 
 ---
