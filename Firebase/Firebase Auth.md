@@ -1,0 +1,7 @@
+# Firebase
+getAuth
+signInWithRedirect
+signInWithPopup
+GoogleAuthProvider
+createUserWithEmailAndPassWord
+signInWithEmailAndPassWord

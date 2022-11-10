@@ -77,7 +77,6 @@ const IndexChild = ()=>{
 		</div>
 	)
 }
-
 ```
 
 ### Outlet
@@ -128,3 +127,47 @@ Paren > indexChildが表示されていて、
 indexChildのCliCK me...をクリックすることで、pathが **/child** になるため 
 Parent > Child という表示になる。ここでhomeをクリックすると、pathが  **/** になるので、
 また Parent> indexChildに戻ることになる。
+
+### useNavigate
+Linkと違って、pathの受け渡しを直接行わなくても、イベントなどでリンクの指定をすることで、指定したリンクに飛ばすことができる。
+
+```javaScript
+
+const navigation = usenavigate();
+
+const goToNextPage = () => {
+	navigation("path名")
+}
+
+const Button = ()=>{
+	return(
+	<div>
+		<button onClick={goToNextPage}>click!</button>
+	</div>	)
+}
+
+const nav = () => {
+	return (
+	<div>
+		<Link to="path名">
+	</div>
+	)
+}
+```
+
+別途Routeでルーティングの指定をしないといけないのは変わらないが、
+アンカー要素以外にイベントでの登録で使えるので、応用が利く
+
+現在のパスが localhost/menu/path1とした場合
+```JavaScript
+useNavigate("path2") localhost/menu/path1/path2
+useNavigate("../path3") localhost/menu/path2
+useNavigate("/path4") lacalhost/path4
+
+```
+
+パスの積み上げを行う際はそのまま
+現在地のパスから置き換えるのなら ../を入れる
+ルート基点からパスをしているなら /を入れる
+
+これはLinkやRouteと変わらない。
